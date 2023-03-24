@@ -1,0 +1,7 @@
+{
+  "name": "PickMent",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

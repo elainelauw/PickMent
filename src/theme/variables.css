@@ -1,7 +1,9 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+
 /** Ionic CSS Variables **/
+
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -74,6 +76,10 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** custom **/
+  --pickment-color-primary: #ffc823; 
+  --pickment-color-secondary: #074075;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -233,4 +239,75 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+
+/** Custom Font Variables **/
+
+@font-face {   
+  font-family: 'Fredoka One';
+  src: url('../../public/assets/font/Fredoka_One/FredokaOne-Regular.ttf');
+}
+
+
+/** Custom CSS **/
+
+.font-fredoka-one {
+  font-family: 'Fredoka One';
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.margin-lr-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-color-primary {
+  color: var(--pickment-color-primary);
+  --color: var(--pickment-color-primary);
+}
+
+.button-short-primary {
+  width: 150px;
+  --border-radius: 1000px;
+  --background: var(--pickment-color-primary);
+  --color: white;
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.button-short-primary-outline {
+  width: 150px;
+  --border-radius: 1000px;
+  border-radius: 1000px;
+  border: 3px solid var(--pickment-color-primary);
+  --background: white;
+  --color: var(--pickment-color-primary);
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.input-label-primary {
+  --color: var(--pickment-color-primary) !important;
+}
+
+.item-has-focus > .input-label-primary {
+  color: var(--pickment-color-primary) !important;
+}
+
+.input-primary {
+  width: 100%;
+  --padding-start: 10px !important;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 3px solid var(--pickment-color-primary);
+}
+
+.input-icon-primary {
+  color: var(--pickment-color-primary);
 }

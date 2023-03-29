@@ -1,0 +1,30 @@
+.login-grid {
+    height: 100%;
+}
+
+.login-row-top {
+    height: 20%;
+    background: url('../../public/assets/image/pexels-dids-2911521.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-color: var(--pickment-color-secondary);
+}
+
+.login-logo {
+    min-width: 50px;
+    width: 75%;
+    max-width: 80px;
+}
+
+.login-row-bottom {
+    height: 80%;
+}
+
+.login-form-row {
+    min-width: 300px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.login-form-item {
+    width: 100%;
+}

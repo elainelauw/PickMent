@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import { useContext, useEffect } from 'react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -22,21 +22,55 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import UserContext from './data/user-context';
+
+import Error404 from './pages/Error404';
+
+import Welcome from './pages/Welcome';
+import Login from './pages/Login';
+import Register from './pages/Register';
+
+import Home from './pages/Home';
+
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const userCtx = useContext(UserContext);
+  const {initContext} = userCtx;
+
+  useEffect(() => {
+    initContext();
+  }, [initContext]);
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet id="main">
+          <Route component={Error404}/>
+
+          <Route exact path="/">
+            <Redirect to="/home"/>
+          </Route>
+
+          <Route exact path="/welcome">
+            <Welcome/>
+          </Route>
+          
+          <Route exact path="/login">
+            <Login/>
+          </Route>
+          
+          <Route exact path="/register">
+            <Register/>
+          </Route>
+
+          <Route exact path="/home">
+            <Home/>
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  )
+};
 
 export default App;

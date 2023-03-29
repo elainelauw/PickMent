@@ -1,0 +1,30 @@
+.register-grid {
+    height: 100%;
+}
+
+.register-row-top {
+    height: 20%;
+    background: url('../../public/assets/image/pexels-dids-2911521.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-color: var(--pickment-color-secondary);
+}
+
+.register-logo {
+    min-width: 50px;
+    width: 75%;
+    max-width: 80px;
+}
+
+.register-row-bottom {
+    height: 80%;
+}
+
+.register-form-row {
+    min-width: 300px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.register-form-item {
+    width: 100%;
+}

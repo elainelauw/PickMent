@@ -270,9 +270,20 @@ http://ionicframework.com/docs/theming/ */
   --color: var(--pickment-color-primary);
 }
 
+.button-big-primary {
+  width: 275px;
+  height: 60px;
+  --border-radius: 2000px;
+  --background: var(--pickment-color-primary);
+  --color: white;
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
 .button-short-primary {
   width: 150px;
-  --border-radius: 1000px;
+  --border-radius: 2000px;
   --background: var(--pickment-color-primary);
   --color: white;
   font-family: 'Fredoka One';
@@ -282,10 +293,32 @@ http://ionicframework.com/docs/theming/ */
 
 .button-short-primary-outline {
   width: 150px;
-  --border-radius: 1000px;
-  border-radius: 1000px;
+  --border-radius: 2000px;
+  border-radius: 2000px;
   border: 3px solid var(--pickment-color-primary);
-  --background: white;
+  background: transparent !important;
+  --color: var(--pickment-color-primary);
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.button-long-primary {
+  width: 220px;
+  --border-radius: 2000px;
+  --background: var(--pickment-color-primary);
+  --color: white;
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.button-long-primary-outline {
+  width: 220px;
+  --border-radius: 2000px;
+  border-radius: 2000px;
+  border: 3px solid var(--pickment-color-primary);
+  background: transparent !important;
   --color: var(--pickment-color-primary);
   font-family: 'Fredoka One';
   text-transform: none;

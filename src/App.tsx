@@ -32,6 +32,8 @@ import Register from './pages/Register';
 
 import Home from './pages/Home';
 
+import About from './pages/About';
+
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -66,6 +68,10 @@ const App: React.FC = () => {
 
           <Route exact path="/home">
             <Home/>
+          </Route>
+
+          <Route exact path="/about">
+            <About/>
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>

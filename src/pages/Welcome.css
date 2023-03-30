@@ -6,7 +6,7 @@
     height: 70%;
     background: url('../../public/assets/image/pexels-dids-2911521.jpg') no-repeat center fixed;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px #07407575;
+    box-shadow: inset 0 0 0 2000px #07407575;
     background-color: var(--pickment-color-secondary);
     color: white;
 }

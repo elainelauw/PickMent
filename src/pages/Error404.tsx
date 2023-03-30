@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonPage, IonRow, IonText } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonPage, IonRow, IonText } from '@ionic/react';
 
 import './Error404.css';
 
@@ -14,16 +14,16 @@ const Error404: React.FC = () => {
               </IonRow>
 
               <IonRow class='ion-padding'>
-                <IonText class='error404-text ion-text-center margin-lr-auto'>
-                  ERROR 404 PAGE
+                <IonText class='error404-text ion-text-center font-fredoka-one margin-lr-auto'>
+                  <h2>404</h2>
+                  <h2>LAMAN TIDAK DITEMUKAN</h2>
                 </IonText>
               </IonRow>
             </IonCol>
           </IonRow>
 
           <IonRow class='error404-row-bottom ion-align-items-center'>
-            <IonCol>
-            </IonCol>
+            <IonButton href='\' class='margin-lr-auto button-short-primary'>Kembali</IonButton>
           </IonRow>
         </IonGrid>
       </IonContent>

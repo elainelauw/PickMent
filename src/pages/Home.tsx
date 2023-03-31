@@ -1,6 +1,7 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonPage, IonRow, NavContext } from '@ionic/react';
 import { mail, mailUnread, personCircle, ribbon, trophy } from 'ionicons/icons';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
 import UserContext from '../data/user-context';
 
@@ -16,13 +17,29 @@ const Home: React.FC = () => {
 		[navigate]
 	);
 
+  const [notifications, setNotifications] = useState<Array<any>>([]);
+  const [isNotificationRead, setIsNotificationRead] = useState(true);
+
 	useEffect(() => {
 		if(userCtx.user.length === 0) {
       redirect();
     }
+    else {
+      const formData = new FormData();
+
+      formData.append('uid', userCtx.user[0].uid.toString());
+
+      axios.post("http://localhost/PickMent/getNotifications.php", formData).then(res => {
+        setNotifications(res.data.notifications);
+      });
+    }
 	}, [userCtx]);
 
-  const [isNotificationRead, setIsNotificationRead] = useState(true);
+  useEffect(() => {
+		if(notifications?.filter(n => n.status === "0").length > 0) {
+      setIsNotificationRead(false);
+    }
+	}, [notifications]);
 
   return (
     <IonPage>

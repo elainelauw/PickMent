@@ -1,0 +1,9 @@
+.notification-text {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.notification-read {
+    opacity: 30%;
+}

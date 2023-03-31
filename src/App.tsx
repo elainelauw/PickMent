@@ -31,7 +31,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 import Home from './pages/Home';
-
+import Notification from './pages/Notification';
+import Archive from './pages/Archive';
 import About from './pages/About';
 
 setupIonicReact();
@@ -68,6 +69,14 @@ const App: React.FC = () => {
 
           <Route exact path="/home">
             <Home/>
+          </Route>
+
+          <Route exact path="/notification">
+            <Notification/>
+          </Route>
+
+          <Route exact path="/archive">
+            <Archive/>
           </Route>
 
           <Route exact path="/about">

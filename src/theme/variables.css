@@ -266,8 +266,8 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .text-color-primary {
-  color: var(--pickment-color-primary);
-  --color: var(--pickment-color-primary);
+  color: var(--pickment-color-primary) !important;
+  --color: var(--pickment-color-primary) !important;
 }
 
 .text-color-secondary {

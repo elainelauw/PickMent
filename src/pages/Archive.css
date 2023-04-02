@@ -1,9 +1,44 @@
+.archive-navbar {
+    width: 100%;
+    box-shadow: 0 -3px rgba(211, 211, 211, 0.5) inset;
+}
+
+.archive-navbar-row {
+    min-width: 200px;
+    width: 100%;
+    max-width: 750px;
+}
+
+.archive-navbar-col-active {
+    cursor: pointer;
+    height: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--pickment-color-secondary);
+    background-color: white;
+    color: var(--pickment-color-secondary);
+    text-align: center;
+}
+
+.archive-navbar-col-inactive {
+    cursor: pointer;
+    height: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--pickment-color-primary);
+    background-color: white;
+    color: var(--pickment-color-primary);
+    text-align: center;
+}
+
 .archive-history-incomplete {
     min-width: 200px;
     width: 95%;
     max-width: 500px;
     --border-radius: 2000px;
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     --background: var(--pickment-color-secondary);
     --color: white;
 }
@@ -14,6 +49,8 @@
     max-width: 500px;
     --border-radius: 2000px;
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     --background: var(--pickment-color-primary);
     --color: white;
 }
@@ -37,11 +74,49 @@
     width: 30px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 
 .archive-history-score {
     width: 60px;
     margin-right: 10px;
+}
+
+.archive-achievement-text {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.archive-badge-item {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.archive-badge-grid {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.archive-badge-image {
+    width: 60px;
+}
+
+.archive-badge-stars {
+    width: max-content;
+    margin-top: 10px;
+}
+
+.archive-badge-bronze {
+    color: #804a00;
+}
+
+.archive-badge-silver {
+    margin-left: 3px;
+    color: #848482;
+}
+
+.archive-badge-gold {
+    margin-left: 3px;
+    color: #d5b56e;
 }

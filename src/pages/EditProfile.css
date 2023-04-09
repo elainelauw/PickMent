@@ -1,0 +1,208 @@
+.edit-profile-header {
+    background-color: white;
+}
+
+.edit-profile-header-item {
+    min-width: 200px;
+    width: 95%;
+    max-width: 500px;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+    --border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: transparent;
+    --color: white;
+}
+
+.edit-profile-header-item-frame {
+    width: 45px;
+    height: 45px;
+    border-radius: 2000px;
+    padding: 3px;
+}
+
+.edit-profile-header-item-avatar {
+    border-radius: 2000px;
+}
+
+.edit-profile-header-item-badge-1 {
+    width: 25px;
+    height: 25px;
+    border-radius: 2000px;
+    border: 3px solid white;
+    vertical-align: middle;
+}
+
+.edit-profile-header-item-badge-2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 2000px;
+    margin-left: 10px;
+    border: 3px solid white;
+    vertical-align: middle;
+}
+
+.edit-profile-header-item-float-right {
+    width: max-content;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.edit-profile-grid {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.edit-avatar-container {
+    position: relative;
+}
+
+.edit-avatar-label {
+    opacity: 50%;
+    font-size: 10px;
+    text-align: center;
+}
+
+.edit-avatar-item {
+    padding: 3px;
+    border-radius: 2000px;
+    border: 3px solid transparent;
+}
+
+.edit-avatar-item-selected {
+    padding: 3px;
+    border-radius: 2000px;
+    border: 3px solid var(--pickment-color-primary);
+}
+
+.edit-avatar-item-locked-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 2000px;
+    border: 6px solid white;
+    background-color: black;
+    opacity: 30%;
+}
+
+.edit-avatar-item-locked-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(2vw + 2vh);
+    color: black;
+}
+
+.edit-frame-container {
+    position: relative;
+}
+
+.edit-frame-label {
+    opacity: 50%;
+    font-size: 10px;
+    text-align: center;
+}
+
+.edit-frame-item {
+    aspect-ratio: 1/1;
+    margin: 3px 3px 7px 3px;
+    border-radius: 2000px;
+    box-shadow: 0 0 5px lightgray;
+}
+
+.edit-frame-item-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1/1;
+    width: calc(100% - 15px);
+    border-radius: 2000px;
+    background-color: white;
+    box-shadow: inset 0 0 5px lightgray;
+}
+
+.edit-frame-item-selected {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(3vw + 3vh);
+    color: var(--pickment-color-primary);
+}
+
+.edit-frame-item-locked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(2vw + 2vh);
+    color: black;
+}
+
+.edit-namecard-container {
+    position: relative;
+}
+
+.edit-namecard-label {
+    opacity: 50%;
+    font-size: 10px;
+    text-align: center;
+}
+
+.edit-namecard-item {
+    aspect-ratio: 16/9;
+    padding: 3px;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    object-fit: cover;
+    object-position: center;
+}
+
+.edit-namecard-item-selected {
+    aspect-ratio: 16/9;
+    padding: 3px;
+    border-radius: 10px;
+    border: 3px solid var(--pickment-color-primary);
+    object-fit: cover;
+    object-position: center;
+}
+
+.edit-namecard-item-locked-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+    border: 6px solid white;
+    background-color: black;
+    opacity: 30%;
+}
+
+.edit-namecard-item-locked-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(2vw + 2vh);
+    color: black;
+}
+
+.edit-profile-footer {
+    padding-bottom: 2px;
+    margin-bottom: -2px;
+    background-color: white;
+}
+
+.edit-profile-footer-row {
+    width: max-content;
+}

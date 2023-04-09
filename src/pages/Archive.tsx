@@ -90,7 +90,7 @@ const Archive: React.FC = () => {
             </IonCol>
 
             <IonCol class={navbar === 2? 'archive-navbar-col-active' : 'archive-navbar-col-inactive'} onClick={() => navbarHandler(2)}>
-              MENDALI
+              MEDALI
             </IonCol>
           </IonRow>
         </IonGrid>
@@ -177,7 +177,7 @@ const Archive: React.FC = () => {
                       </IonRow>
 
                       <IonRow>
-                        {b.description} ({b.counter}/{b.target})
+                        {b.description} ({b.status === "3" && "Jumlah: "}{b.counter}{b.status !== "3" && "/" + b.target})
                       </IonRow>
                     </IonCol>
                   </IonRow>

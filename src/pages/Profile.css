@@ -1,0 +1,157 @@
+.profile-username-modal {
+    --width: 343px;
+    --height: 270px;
+}
+
+.profile-username-modal-label {
+    --color: transparent !important;
+}
+
+.profile-username-modal-warning-text {
+    color: red;
+}
+
+.profile-badge-modal {
+    --width: 343px;
+    --height: 400px;
+}
+
+.profile-badge-modal-item-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-badge-modal-label {
+    opacity: 50%;
+    font-size: 10px;
+    text-align: center;
+}
+
+.profile-badge-modal-item {
+    padding: 3px;
+    border-radius: 2000px;
+    border: 3px solid transparent;
+}
+
+.profile-badge-modal-item-selected {
+    padding: 3px;
+    border-radius: 2000px;
+    border: 3px solid var(--pickment-color-primary);
+}
+
+.profile-badge-modal-item-selected-label {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    padding-top: 2px;
+    padding-left: auto;
+    padding-right: auto;
+    border-radius: 2000px;
+    background-color: var(--pickment-color-primary);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile-col-top {
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.profile-div-top {
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(transparent 50%, var(--pickment-color-secondary) 50%);
+}
+
+.profile-avatar-div {
+    width: 100px;
+    height: 100px;
+    border-radius: 2000px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+.profile-avatar-image {
+    border-radius: 2000px;
+}
+
+.profile-div-bottom {
+    border-radius: 0 0 5px 5px;
+    margin-top: -1px;
+    padding-top: 1px;
+    background: var(--pickment-color-secondary);
+    color: white;
+}
+
+.profile-username-edit {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.profile-badge-1 {
+    width: 30px;
+    height: 30px;
+    border-radius: 2000px;
+    border: 3px solid white;
+}
+
+.profile-badge-2 {
+    width: 30px;
+    height: 30px;
+    border-radius: 2000px;
+    margin-left: 10px;
+    border: 3px solid white;
+}
+
+.profile-badge-edit {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.profile-level-row {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: small;
+}
+
+.profile-level-required-xp {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    border-radius: 2000px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-level-current-xp {
+    height: 100%;
+    border-radius: 2000px;
+    background-color: var(--pickment-color-primary);
+}
+
+.profile-level-text {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+    display: inline;
+    width: max-content;
+}
+
+.profile-level-xp {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    display: inline;
+    width: max-content;
+}

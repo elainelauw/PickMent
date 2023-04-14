@@ -98,7 +98,7 @@ const Archive: React.FC = () => {
         <IonGrid>
           {navbar === 0 && histories && histories.length > 0 &&
             histories.map(h => (
-              <IonItem lines='none' href={'\\' + h.setId.padStart(6, '0')} class={h.status === "0"? 'archive-history-incomplete' : 'archive-history-complete'} key={h.setId}>
+              <IonItem lines='none' href={'/leaderboard/' + h.setId.padStart(6, '0')} class={h.status === "0"? 'archive-history-incomplete' : 'archive-history-complete'} key={h.setId}>
                 <IonGrid>
                   <IonRow class='ion-align-items-center'>
                     <IonCol class='archive-history-text'>
@@ -112,7 +112,7 @@ const Archive: React.FC = () => {
                     </IonCol>
     
                     <IonCol size='auto'>
-                      <IonRow class='archive-history-float-right'>
+                      <IonRow class='archive-history-float-right ion-align-items-center'>
                         <div className='archive-history-rank'>
                           <IonIcon icon={trophy}/>
                           <IonText> {h.rank}</IonText>

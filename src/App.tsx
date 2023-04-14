@@ -31,6 +31,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 import Home from './pages/Home';
+// import Pick from './pages/Pick';
+import GlobalLeaderboard from './pages/GlobalLeaderboard';
 import Notification from './pages/Notification';
 import Archive from './pages/Archive';
 import Profile from './pages/Profile';
@@ -38,6 +40,11 @@ import About from './pages/About';
 
 import EditProfile from './pages/EditProfile';
 import EditInfo from './pages/EditInfo';
+import Settings from './pages/Settings';
+
+import Upload from './pages/Upload';
+import Uploaded from './pages/Uploaded';
+import UploadDetail from './pages/UploadDetail';
 
 setupIonicReact();
 
@@ -75,6 +82,14 @@ const App: React.FC = () => {
             <Home/>
           </Route>
 
+          {/* <Route exact path="/play">
+            <Pick/>
+          </Route> */}
+
+          <Route exact path="/leaderboard">
+            <GlobalLeaderboard/>
+          </Route>
+
           <Route exact path="/notification">
             <Notification/>
           </Route>
@@ -93,6 +108,22 @@ const App: React.FC = () => {
 
           <Route exact path="/editInfo">
             <EditInfo/>
+          </Route>
+
+          <Route exact path="/settings">
+            <Settings/>
+          </Route>
+
+          <Route exact path="/upload">
+            <Upload/>
+          </Route>
+
+          <Route exact path="/uploaded">
+            <Uploaded/>
+          </Route>
+
+          <Route exact path="/uploaded/:id">
+            <UploadDetail/>
           </Route>
 
           <Route exact path="/about">

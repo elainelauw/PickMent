@@ -56,6 +56,7 @@
 }
 
 .archive-history-text {
+    width: 0;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -71,7 +72,7 @@
 }
 
 .archive-history-rank {
-    width: 30px;
+    width: 40px;
     margin-left: 10px;
     margin-right: 10px;
 }

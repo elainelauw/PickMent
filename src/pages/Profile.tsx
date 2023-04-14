@@ -367,7 +367,7 @@ const Profile: React.FC = () => {
               </IonRow>
 
               <IonRow>
-                <IonButton href='\setting' class='margin-lr-auto button-long-primary'>
+                <IonButton href='\settings' class='margin-lr-auto button-long-primary'>
                   Pengaturan
                 </IonButton>
               </IonRow>

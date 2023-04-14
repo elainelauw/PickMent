@@ -1,14 +1,14 @@
-.edit-info-form-row {
+.settings-form-row {
     min-width: 300px;
     width: 100%;
     max-width: 500px;
 }
 
-.edit-info-form-item {
+.settings-form-item {
     width: 100%;
     --background-hover-opacity: 0;
 }
 
-.edit-info-buttons-row {
+.settings-buttons-row {
     width: max-content;
 }

@@ -1,0 +1,83 @@
+.global-leaderboard-content {
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+}
+
+.global-leaderboard-content::-webkit-scrollbar {
+    display: none;
+}
+
+.global-leaderboard-icon {
+    font-size: 50px;
+}
+
+.global-leaderboard-item {
+    min-width: 180px;
+    width: calc(95% - 20px);
+    max-width: 480px;
+    --border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: transparent;
+    --color: white;
+}
+
+.global-leaderboard-item-user {
+    min-width: 200px;
+    width: 95%;
+    max-width: 500px;
+    --border-radius: 5px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-start: 26px;
+    --padding-end: 10px;
+    border-radius: 5px;
+    --inner-border-width: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: transparent;
+    --color: white;
+}
+
+.global-leaderboard-item-frame {
+    width: 45px;
+    height: 45px;
+    border-radius: 2000px;
+    padding: 3px;
+}
+
+.global-leaderboard-item-avatar {
+    border-radius: 2000px;
+}
+
+.global-leaderboard-item-badge-1 {
+    width: 25px;
+    height: 25px;
+    border-radius: 2000px;
+    border: 3px solid white;
+    vertical-align: middle;
+}
+
+.global-leaderboard-item-badge-2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 2000px;
+    margin-left: 10px;
+    border: 3px solid white;
+    vertical-align: middle;
+}
+
+.global-leaderboard-item-float-right {
+    width: max-content;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.global-leaderboard-footer {
+    background-color: white;
+}

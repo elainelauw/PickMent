@@ -55,7 +55,7 @@ const Home: React.FC = () => {
                 <IonRow class='ion-padding'>
                   <IonCol>
                     <IonRow>
-                      <IonButton href='\pickSet' class='margin-lr-auto button-big-primary'>
+                      <IonButton href='\play' class='margin-lr-auto button-big-primary'>
                         <img src='assets/icon/LR Arrow.gif' className='home-play-button-arrow margin-lr-auto'/>
                         <h2 className='home-play-button-text'>MAIN</h2>
                         <img src='assets/icon/RL Arrow.gif' className='home-play-button-arrow margin-lr-auto'/>

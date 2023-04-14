@@ -250,6 +250,25 @@ http://ionicframework.com/docs/theming/ */
 }
 
 
+/** Modification of Ionic CSS **/
+
+[aria-checked=true].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md {
+  border-color: var(--pickment-color-primary) !important;
+}
+
+.alert-radio-inner.sc-ion-alert-md {
+  background-color: var(--pickment-color-primary) !important;
+}
+
+.alert-radio-label {
+  white-space: normal !important;
+}
+
+.alert-button-inner {
+  color: var(--pickment-color-primary) !important;
+}
+
+
 /** Custom CSS **/
 
 .font-fredoka-one {
@@ -286,6 +305,29 @@ http://ionicframework.com/docs/theming/ */
   --border-radius: 2000px;
   --background: var(--pickment-color-primary);
   --color: white;
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.button-shorter-primary {
+  width: 100px;
+  --border-radius: 2000px;
+  --background: var(--pickment-color-primary);
+  --color: white;
+  font-family: 'Fredoka One';
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.button-shorter-primary-outline {
+  width: 100px;
+  --border-radius: 2000px;
+  border-radius: 2000px;
+  border: 3px solid var(--pickment-color-primary);
+  --background: transparent !important;
+  background: transparent !important;
+  --color: var(--pickment-color-primary);
   font-family: 'Fredoka One';
   text-transform: none;
   --box-shadow: none;
@@ -329,6 +371,7 @@ http://ionicframework.com/docs/theming/ */
   --border-radius: 2000px;
   border-radius: 2000px;
   border: 3px solid var(--pickment-color-primary);
+  --background: transparent !important;
   background: transparent !important;
   --color: var(--pickment-color-primary);
   font-family: 'Fredoka One';
@@ -350,8 +393,25 @@ http://ionicframework.com/docs/theming/ */
   margin-top: 5px;
   border-radius: 5px;
   border: 3px solid var(--pickment-color-primary);
+  --background-hover-opacity: 0 !important;
 }
 
 .input-icon-primary {
   color: var(--pickment-color-primary);
+}
+
+.select-primary {
+  width: 100%;
+  --placeholder-opacity: 0.5 !important;
+  --highlight-color-focused: var(--pickment-color-primary) !important;
+}
+
+.select-primary::part(icon) {
+  transform: none;
+  color: var(--pickment-color-primary) !important;
+  opacity: 1;
+}
+
+.item-has-focus > .select-primary::part(icon) {
+  transform: rotate(180deg);
 }

@@ -1,14 +1,19 @@
-.edit-info-form-row {
+.upload-form-row {
     min-width: 300px;
     width: 100%;
     max-width: 500px;
 }
 
-.edit-info-form-item {
+.upload-form-item {
     width: 100%;
     --background-hover-opacity: 0;
 }
 
-.edit-info-buttons-row {
+.upload-form-warning-text {
+    min-height: 70px;
+    color: red;
+}
+
+.upload-buttons-row {
     width: max-content;
 }

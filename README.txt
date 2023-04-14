@@ -20,6 +20,14 @@ npm install axios
 ___________
 
 
+SheetJS
+(https://www.npmjs.com/package/xlsx)
+
+npm install xlsx
+
+___________
+
+
 ReactExportTableToExcel
 (https://github.com/EdisonJpp/react-export-table-to-excel)
 

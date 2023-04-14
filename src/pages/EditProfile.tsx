@@ -265,11 +265,11 @@ const EditProfile: React.FC = () => {
         <IonGrid>
           <IonRow class='edit-profile-footer-row margin-lr-auto'>
             <IonCol size='auto'>
-              <IonButton class='button-short-primary' onClick={editProfileHandler}>Simpan</IonButton>
+              <IonButton class='button-shorter-primary' onClick={editProfileHandler}>Simpan</IonButton>
             </IonCol>
 
             <IonCol size='auto'>
-              <IonButton class='button-short-primary-outline' onClick={resetInputHandler}>Reset</IonButton>
+              <IonButton class='button-shorter-primary-outline' onClick={resetInputHandler}>Reset</IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>

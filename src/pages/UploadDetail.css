@@ -1,0 +1,83 @@
+.detail-row {
+    min-width: 250px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.detail-table {
+    border: 1px solid var(--pickment-color-secondary);
+    width: 100%;
+}
+
+.detail-table tr {
+    border: 1px solid var(--pickment-color-secondary);
+    padding: 5px;
+    background-color: white;
+}
+
+.detail-table th, .detail-table td {
+    border: 1px solid var(--pickment-color-secondary);
+    padding: 10px;
+    text-align: center;
+}
+
+.detail-table th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 600px) {
+    .detail-table {
+        border: 0;
+        min-width: 300px;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .detail-table thead {
+        display: none;
+    }
+
+    .detail-table tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid var(--pickment-color-secondary);
+        background-color: white;
+    }
+
+    .detail-table td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted var(--pickment-color-secondary);
+        min-height: 33px;
+        word-break: normal;
+        word-wrap: normal;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .detail-table td:not(:first-child):before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 50px;
+    }
+
+    .detail-table td:first-child:before {
+        content: attr(data-label);
+    }
+
+    .detail-table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+.detail-fab {
+    margin-bottom: 10px;
+    --background: var(--pickment-color-primary);
+}

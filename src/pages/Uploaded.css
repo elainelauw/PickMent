@@ -1,0 +1,33 @@
+.uploaded-item {
+    min-width: 200px;
+    width: 95%;
+    max-width: 500px;
+    --border-radius: 2000px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: var(--pickment-color-primary);
+    --color: white;
+}
+
+.uploaded-text {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.uploaded-description {
+    font-size: small;
+}
+
+.uploaded-float-right {
+    width: max-content;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.uploaded-players {
+    width: 65px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

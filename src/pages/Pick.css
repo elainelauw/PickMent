@@ -1,0 +1,39 @@
+.pick-item {
+    min-width: 200px;
+    width: 95%;
+    max-width: 500px;
+    --border-radius: 2000px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: var(--pickment-color-primary);
+    --color: white;
+}
+
+.pick-text {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pick-description {
+    font-size: small;
+}
+
+.pick-float-right {
+    width: max-content;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.pick-counter {
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pick-language {
+    width: 35px;
+    margin-right: 10px;
+    border-radius: 2000px;
+}

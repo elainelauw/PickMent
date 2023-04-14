@@ -31,7 +31,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 import Home from './pages/Home';
-// import Pick from './pages/Pick';
+import Pick from './pages/Pick';
 import GlobalLeaderboard from './pages/GlobalLeaderboard';
 import Notification from './pages/Notification';
 import Archive from './pages/Archive';
@@ -82,9 +82,9 @@ const App: React.FC = () => {
             <Home/>
           </Route>
 
-          {/* <Route exact path="/play">
+          <Route exact path="/play">
             <Pick/>
-          </Route> */}
+          </Route>
 
           <Route exact path="/leaderboard">
             <GlobalLeaderboard/>

@@ -1,6 +1,6 @@
-import { IonBackButton, IonButtons, IonCol, IonContent, IonFab, IonFabButton, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar, NavContext } from '@ionic/react';
-import { caretBack, downloadOutline, trophy } from 'ionicons/icons';
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { IonBackButton, IonButtons, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar, NavContext } from '@ionic/react';
+import { caretBack, trophy } from 'ionicons/icons';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 

@@ -38,42 +38,37 @@ const UploadDetail: React.FC = () => {
       redirect();
     }
     else {
-      if(userCtx.user[0].uid != -1) {
-        const formData = new FormData();
+      if(!/^[0-9]*$/.test(id)) {
+        redirect404();
+      }
+      else {
+        if(userCtx.user[0].uid != -1) {
+          const formData = new FormData();
 
-        formData.append('uid', userCtx.user[0].uid.toString());
+          formData.append('uid', userCtx.user[0].uid.toString());
+          formData.append('id', id);
 
-        axios.post("http://localhost/PickMent/getProfile.php", formData).then(res => {
-          if(res.data.profile[0].status === "0") {
-            redirect404();
-          }
-        });
+          axios.post("http://localhost/PickMent/getProfile.php", formData).then(res => {
+            if(res.data.profile[0].status === "0") {
+              redirect404();
+            }
+          });
+
+          axios.post("http://localhost/PickMent/getDataTable.php", formData).then(res => {
+            if(res.data.found === 0) {
+              redirect404();
+            }
+            else {
+              setTitle(res.data.title);
+              setTime(moment(res.data.time, 'YYYY-MM-DD hh:mm:ss').format("DD-MM-YYYY HH:mm"));
+
+              setDataTable(res.data.dataTable);
+            }
+          });
+        }
       }
     }
 	}, [userCtx]);
-
-  useEffect(() => {
-		if(!/^[0-9]*$/.test(id)) {
-      redirect404();
-    }
-    else {
-      const formData = new FormData();
-
-      formData.append('id', id);
-
-      axios.post("http://localhost/PickMent/getDataTable.php", formData).then(res => {
-        if(res.data.found === 0) {
-          redirect404();
-        }
-        else {
-          setTitle(res.data.title);
-          setTime(moment(res.data.time, 'YYYY-MM-DD hh:mm:ss').format("DD-MM-YYYY HH:mm"));
-
-          setDataTable(res.data.dataTable);
-        }
-      });
-    }
-	}, [id]);
 
   return (
     <IonPage>

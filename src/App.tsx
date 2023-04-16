@@ -38,6 +38,8 @@ import Archive from './pages/Archive';
 import Profile from './pages/Profile';
 import About from './pages/About';
 
+import Play from './pages/Play';
+
 import EditProfile from './pages/EditProfile';
 import EditInfo from './pages/EditInfo';
 import Settings from './pages/Settings';
@@ -84,6 +86,10 @@ const App: React.FC = () => {
 
           <Route exact path="/play">
             <Pick/>
+          </Route>
+
+          <Route exact path="/play/:id">
+            <Play/>
           </Route>
 
           <Route exact path="/leaderboard">

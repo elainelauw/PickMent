@@ -35,10 +35,6 @@ const Pick: React.FC = () => {
     }
 	}, [userCtx]);
 
-  useEffect(() => {
-		console.log(optionList);
-	}, [optionList]);
-
   return (
     <IonPage>
       <IonHeader>

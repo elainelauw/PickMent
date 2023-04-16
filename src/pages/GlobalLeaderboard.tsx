@@ -114,6 +114,16 @@ const GlobalLeaderboard: React.FC = () => {
           </IonRow>
         </IonGrid>
 
+        {leaderboard && leaderboard.length === 0 && 
+          <IonGrid>
+            <IonRow>
+              <IonLabel class='margin-lr-auto'>
+                <p>Papan Peringkat kosong.</p>
+              </IonLabel>
+            </IonRow>
+          </IonGrid>
+        }
+
         {leaderboard && leaderboard.length > 0 && userCtx.user.length > 0 &&
           leaderboard.map((l, i) => (
             <IonItem lines='none' class={l.uid === userCtx.user[0].uid? 'global-leaderboard-item-user' : 'global-leaderboard-item'} key={i}
@@ -126,7 +136,7 @@ const GlobalLeaderboard: React.FC = () => {
               <IonGrid>
                 <IonRow class='ion-align-items-center'>
                   <IonCol size='1' class='font-fredoka-one'>
-                    {i + 1}
+                    {l.rank}
                   </IonCol>
 
                   <IonCol size='auto'>

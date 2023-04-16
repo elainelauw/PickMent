@@ -1,0 +1,63 @@
+.play-grid {
+    height: 100%;
+}
+
+.play-col {
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+.play-row-question {
+    min-height: 150px;
+    height: 31%;
+    background-color: white;
+}
+
+.play-question-number {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.play-question-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-question-label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0.3;
+}
+
+.play-answer-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 15vh;
+}
+
+.play-row-positive {
+    height: 23%;
+    background-color: #00bbff;
+    color: white;
+}
+
+.play-row-neutral {
+    height: 23%;
+    background-color: #C9DBE5;
+    color: white;
+}
+
+.play-row-negative {
+    height: 23%;
+    background-color: #ff8888;
+    color: white;
+}

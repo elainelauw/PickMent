@@ -58,14 +58,19 @@ const Profile: React.FC = () => {
 
           setRequiredXp(y);
           
-          if(res.data.profile[0].xp === 0) {
+          if(parseInt(res.data.profile[0].xp) === 0) {
             setXpPercentage(0);
           }
           else {
-            var m = parseInt(res.data.profile[0].xp);
-            var o = m / y * 100;
-
-            setXpPercentage(o);
+            if(parseInt(res.data.profile[0].xp) > y) {
+              setXpPercentage(100);
+            }
+            else {
+              var m = parseInt(res.data.profile[0].xp);
+              var o = m / y * 100;
+  
+              setXpPercentage(o);
+            }
           }
 
           setAvatar(res.data.profile[0].avatarImage);

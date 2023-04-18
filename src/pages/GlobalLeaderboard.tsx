@@ -203,16 +203,8 @@ const GlobalLeaderboard: React.FC = () => {
               </IonCol>
 
               <IonCol size='auto'>
-                {badge1image === ""?
-                  <div className='global-leaderboard-item-badge-1'></div>
-                :
-                  <img src={'assets/badge/' + badge1image} className='global-leaderboard-item-badge-1'/>
-                }
-                {badge2image === ""?
-                  <div className='global-leaderboard-item-badge-2'></div>
-                :
-                  <img src={'assets/badge/' + badge2image} className='global-leaderboard-item-badge-2'/>
-                }
+                {badge1image !== "" && <img src={'assets/badge/' + badge1image} className='global-leaderboard-item-badge-1'/>}
+                {badge2image !== "" && <img src={'assets/badge/' + badge2image} className='global-leaderboard-item-badge-2'/>}
               </IonCol>
 
               <IonCol size='auto' class='global-leaderboard-item-float-right font-fredoka-one'>

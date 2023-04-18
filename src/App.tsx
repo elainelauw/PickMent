@@ -36,9 +36,11 @@ import GlobalLeaderboard from './pages/GlobalLeaderboard';
 import Notification from './pages/Notification';
 import Archive from './pages/Archive';
 import Profile from './pages/Profile';
+import Illustration from './pages/Illustration';
 import About from './pages/About';
 
 import Play from './pages/Play';
+import GameLeaderboard from './pages/GameLeaderboard';
 
 import EditProfile from './pages/EditProfile';
 import EditInfo from './pages/EditInfo';
@@ -96,6 +98,10 @@ const App: React.FC = () => {
             <GlobalLeaderboard/>
           </Route>
 
+          <Route exact path="/leaderboard/:id">
+            <GameLeaderboard/>
+          </Route>
+
           <Route exact path="/notification">
             <Notification/>
           </Route>
@@ -130,6 +136,10 @@ const App: React.FC = () => {
 
           <Route exact path="/uploaded/:id">
             <UploadDetail/>
+          </Route>
+
+          <Route exact path="/illustration">
+            <Illustration/>
           </Route>
 
           <Route exact path="/about">

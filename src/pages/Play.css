@@ -1,3 +1,37 @@
+.play-modal {
+    --width: 100%;
+    --height: 100%;
+}
+
+.play-modal-content-correct {
+    position: relative;
+    --background: #98cb00;
+}
+
+.play-modal-content-incorrect {
+    position: relative;
+    --background: #990000;
+}
+
+.play-modal-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.play-modal-grid {
+    height: 100%;
+    color: white;
+}
+
+.play-modal-row {
+    height: 100%;
+}
+
+.play-modal-icon {
+    font-size: 20vh;
+}
+
 .play-grid {
     height: 100%;
 }

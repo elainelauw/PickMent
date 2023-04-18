@@ -184,7 +184,6 @@ const EditInfo: React.FC = () => {
             <IonItem lines='none' class='edit-info-form-item'>
               <IonLabel position='stacked' class='input-label-primary'>Tahun Lahir</IonLabel>
               <IonItem lines='none' class='input-primary'>
-                {/* <IonInput placeholder='Tahun lahir" type='text' value={newBirthYear} onIonChange={(e: any) => setNewBirthYear(e.target.value)}/> */}
                 <IonSelect 
                   interfaceOptions={{
                     header: 'Tahun Lahir'

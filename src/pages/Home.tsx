@@ -1,5 +1,5 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonPage, IonRow, NavContext } from '@ionic/react';
-import { mail, mailUnread, personCircle, ribbon, trophy } from 'ionicons/icons';
+import { mail, mailUnread, personCircle, ribbon, sparkles, trophy } from 'ionicons/icons';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -20,18 +20,28 @@ const Home: React.FC = () => {
   const [notifications, setNotifications] = useState<Array<any>>([]);
   const [isNotificationRead, setIsNotificationRead] = useState(true);
 
+  const [showIllustration, setShowIllustration] = useState(false);
+
 	useEffect(() => {
 		if(userCtx.user.length === 0) {
       redirect();
     }
     else {
-      const formData = new FormData();
+      if(userCtx.user[0].uid != -1) {
+        const formData = new FormData();
 
-      formData.append('uid', userCtx.user[0].uid.toString());
+        formData.append('uid', userCtx.user[0].uid.toString());
 
-      axios.post("http://localhost/PickMent/getNotifications.php", formData).then(res => {
-        setNotifications(res.data.notifications);
-      });
+        axios.post("http://localhost/PickMent/getNotifications.php", formData).then(res => {
+          setNotifications(res.data.notifications);
+        });
+
+        axios.post("http://localhost/PickMent/getProfile.php", formData).then(res => {
+          if(parseInt(res.data.profile[0].participation) > 0) {
+            setShowIllustration(true);
+          }
+        });
+      }
     }
 	}, [userCtx]);
 
@@ -91,6 +101,13 @@ const Home: React.FC = () => {
                       <IonButton href='\profile' class='margin-lr-auto button-long-primary'>
                         <IonIcon class='home-button-icon' slot='start' icon={personCircle}/>
                         Profil
+                      </IonButton>
+                    </IonRow>
+
+                    <IonRow>
+                      <IonButton href='\illustration' class='margin-lr-auto button-long-primary' disabled={!showIllustration}>
+                        <IonIcon class='home-button-icon' slot='start' icon={sparkles}/>
+                        Ilustrasi
                       </IonButton>
                     </IonRow>
                   </IonCol>

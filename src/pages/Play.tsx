@@ -1,5 +1,5 @@
-import { IonCol, IonContent, IonGrid, IonIcon, IonLabel, IonPage, IonRippleEffect, IonRow, NavContext } from '@ionic/react';
-import { personCircle } from 'ionicons/icons';
+import { IonCol, IonContent, IonGrid, IonIcon, IonLabel, IonModal, IonPage, IonProgressBar, IonRippleEffect, IonRow, NavContext } from '@ionic/react';
+import { checkmarkCircle, closeCircle } from 'ionicons/icons';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -79,6 +79,9 @@ const Play: React.FC = () => {
     }
 	}, [userCtx]);
 
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [modalPoint, setModalPoint] = useState(0);
+
   const answerHandler = (answer: Number) => {
     if(x < gameData.length) {
       var positiveResult = answer === 1? gameData[x].positive + 1 : gameData[x].positive;
@@ -125,12 +128,33 @@ const Play: React.FC = () => {
         points: points
       }]);
 
+      setModalPoint(points);
+      setIsModalShown(true);
+
       setX(x + 1);
     }
 	}
 
+  const [progress, setProgress] = useState(0);
+
   useEffect(() => {
-    if(gameData.length > 0 && answerData.length === gameData.length) {
+    if(isModalShown === true) {
+      const interval = setInterval(() => {
+        setProgress((prevProgress) => prevProgress + 0.01);
+      }, 25);
+      return () => clearInterval(interval);
+    }
+  }, [isModalShown]);
+
+  if(progress > 1) {
+    setTimeout(() => {
+      setIsModalShown(false);
+      setProgress(0);
+    }, 0);
+  }
+
+  useEffect(() => {
+    if(gameData.length > 0 && answerData.length === gameData.length && progress > 1) {
       console.log(answerData);
       const formData = new FormData();
 
@@ -144,11 +168,52 @@ const Play: React.FC = () => {
         history.replace('/leaderboard/' + id + '#showIllustration');
       });
     }
-	}, [answerData]);
+	}, [answerData, progress]);
 
   return (
     <IonPage>
       <IonContent fullscreen>
+        <IonModal
+          isOpen={isModalShown}
+          onDidDismiss={() => setIsModalShown(false)}
+          class='play-modal'
+        >
+          <IonContent class={modalPoint === 0? 'play-modal-content-incorrect' : 'play-modal-content-correct'}>
+            <IonProgressBar value={progress} color="light" class='play-modal-progress-bar'/>
+            <IonGrid class='play-modal-grid ion-padding'>
+              <IonRow class='play-modal-row ion-padding-bottom ion-align-items-center'>
+                <IonCol class='ion-padding-bottom'>
+                  <IonRow>
+                    <IonIcon icon={modalPoint === 0? closeCircle : checkmarkCircle} class='play-modal-icon margin-lr-auto'/>
+                  </IonRow>
+
+                  {modalPoint === 0?
+                    <>
+                      <IonRow>
+                        <p className='margin-lr-auto ion-text-center'>Pilihan Anda berbeda dari suara mayoritas: Kemenangan beruntun berakhir...</p>
+                      </IonRow>
+
+                      <IonRow class='ion-padding'>
+                        <h1 className='font-fredoka-one margin-lr-auto'>+{modalPoint} point</h1>
+                      </IonRow>
+                    </>
+                  :
+                    <>
+                      <IonRow>
+                        <p className='margin-lr-auto ion-text-center'>Pilihan Anda paling banyak dipilih: Anda menang {correctCounter} kali beruntun!</p>
+                      </IonRow>
+
+                      <IonRow class='ion-padding'>
+                        <h1 className='font-fredoka-one margin-lr-auto'>+{modalPoint} point</h1>
+                      </IonRow>
+                    </>
+                  }
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonContent>
+        </IonModal>
+
         {gameData && gameData.length > 0 && x < gameData.length &&
           <IonGrid class='play-grid ion-no-padding'>
             <IonRow class='play-row-question ion-align-items-center'>

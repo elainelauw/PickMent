@@ -148,16 +148,14 @@ const EditProfile: React.FC = () => {
               </IonCol>
 
               <IonCol size='auto'>
-                {badge1image === ""?
-                  <div className='edit-profile-header-item-badge-1'></div>
-                :
-                  <img src={'assets/badge/' + badge1image} className='edit-profile-header-item-badge-1'/>
-                }
-                {badge2image === ""?
-                  <div className='edit-profile-header-item-badge-2'></div>
-                :
-                  <img src={'assets/badge/' + badge2image} className='edit-profile-header-item-badge-2'/>
-                }
+                <IonRow>
+                  {badge1image !== "" &&
+                    <img src={'assets/badge/' + badge1image} className='edit-profile-header-item-badge-1'/>
+                  }
+                  {badge2image !== "" &&
+                    <img src={'assets/badge/' + badge2image} className='edit-profile-header-item-badge-2'/>
+                  }
+                </IonRow>
               </IonCol>
 
               <IonCol size='auto' class='edit-profile-header-item-float-right font-fredoka-one'>

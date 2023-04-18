@@ -45,6 +45,7 @@ const About: React.FC = () => {
                       XAMPP<br/>
                       Capacitor Storage<br/>
                       Axios<br/>
+                      SheetJS<br/>
                       ReactExportTableToExcel<br/>
                       Moment.js<br/>
                       Pexels

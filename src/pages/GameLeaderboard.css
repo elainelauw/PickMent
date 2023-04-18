@@ -1,0 +1,138 @@
+.game-leaderboard-content {
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    --background: var(--pickment-color-secondary);
+}
+
+.game-leaderboard-content::-webkit-scrollbar {
+    display: none;
+}
+
+.game-leaderboard-grid {
+    height: 100%;
+}
+
+.game-leaderboard-row {
+    height: 100%;
+    background: url('../../public/assets/image/pexels-dids-2911521.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-color: var(--pickment-color-secondary);
+    color: white;
+}
+
+.game-leaderboard-row-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, var(--pickment-color-secondary), var(--pickment-color-secondary));
+}
+
+.game-leaderboard-logo {
+    min-width: 75px;
+    width: 30%;
+    max-width: 100px;
+    margin-top: 20px;
+}
+
+.game-leaderboard-score {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 50px;
+}
+
+.game-leaderboard-score-arrow-left {
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.game-leaderboard-score-arrow-right {
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+.game-leaderboard-icon {
+    font-size: 50px;
+}
+
+.game-leaderboard-item {
+    min-width: 180px;
+    width: calc(95% - 20px);
+    max-width: 480px;
+    --border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: transparent;
+    --color: white;
+}
+
+.game-leaderboard-item-user {
+    min-width: 200px;
+    width: 95%;
+    max-width: 500px;
+    --border-radius: 5px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-start: 26px;
+    --padding-end: 10px;
+    border-radius: 5px;
+    --inner-border-width: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    --background: transparent;
+    --color: white;
+}
+
+.game-leaderboard-col {
+    padding: 5px;
+}
+
+.game-leaderboard-item-frame {
+    width: 45px;
+    height: 45px;
+    border-radius: 2000px;
+    padding: 3px;
+}
+
+.game-leaderboard-item-avatar {
+    border-radius: 2000px;
+}
+
+.game-leaderboard-item-badge-1 {
+    width: 25px;
+    height: 25px;
+    border-radius: 2000px;
+    border: 3px solid white;
+    vertical-align: middle;
+}
+
+.game-leaderboard-item-badge-2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 2000px;
+    margin-left: 10px;
+    border: 3px solid white;
+    vertical-align: middle;
+}
+
+.game-leaderboard-item-float-right {
+    width: max-content;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.game-leaderboard-footer {
+    background-color: var(--pickment-color-secondary);
+    box-shadow: 0px -50px 50px #07407580;
+}

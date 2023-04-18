@@ -1,0 +1,71 @@
+.illustration-grid {
+    height: 100%;
+    background: linear-gradient(rgb(32, 171, 32), rgb(0, 128, 98));
+}
+
+.illustration-row-top {
+    position: relative;
+    height: calc(100% - 120px);
+}
+
+.illustration-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes appear { 
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.illustration-item-appear {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: appear 5s;
+}
+
+@keyframes disappear { 
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.illustration-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: disappear 4s;
+}
+
+.illustration-row-bottom {
+    height: 120px;
+    background-color: transparent !important;
+}
+
+.illustration-text {
+    color: white !important;
+}

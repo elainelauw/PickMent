@@ -4,7 +4,7 @@
 
 .login-row-top {
     height: 20%;
-    background: url('../../public/assets/image/pexels-dids-2911521.jpg') no-repeat center fixed;
+    background: url('../../public/assets/image/Background.gif') no-repeat center fixed;
     background-size: cover;
     background-color: var(--pickment-color-secondary);
 }

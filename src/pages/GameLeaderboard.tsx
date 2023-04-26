@@ -45,6 +45,7 @@ const GameLeaderboard: React.FC = () => {
   const [badge1image, setBadge1image] = useState("");
   const [badge2image, setBadge2image] = useState("");
   const [score, setScore] = useState("0");
+  const [participation, setParticipation] = useState(0);
 
 	useEffect(() => {
 		if(userCtx.user.length === 0) {
@@ -70,6 +71,7 @@ const GameLeaderboard: React.FC = () => {
             setBadge1image(res.data.badge1image);
             setBadge2image(res.data.badge2image);
             setScore(res.data.score);
+            setParticipation(parseInt(res.data.participation));
 
             setLeaderboard(res.data.leaderboard);
           }
@@ -123,9 +125,11 @@ const GameLeaderboard: React.FC = () => {
                     leaderboard.map((l, i) => (
                       <IonItem lines='none' class={l.uid === userCtx.user[0].uid? 'game-leaderboard-item-user' : 'game-leaderboard-item'} key={i}
                         style={{
-                          background: "url(assets/namecard/" + l.namecardImage + ") no-repeat center fixed",
-                          backgroundSize: "cover",
-                          backgroundColor: "var(--pickment-color-secondary)"
+                          backgroundImage: "url(assets/namecard/" + l.namecardImage + ")",
+                          backgroundPosition: "0 100%",
+                          backgroundRepeat: "no-repeat",
+                          backgroundAttachment: "fixed",
+                          backgroundSize: "cover"
                         }}
                       >
                         <IonGrid>
@@ -200,7 +204,10 @@ const GameLeaderboard: React.FC = () => {
       <IonFooter class='game-leaderboard-footer ion-no-border'>
         <IonItem lines='none' class='game-leaderboard-item-user'
           style={{
-            background: "url(assets/namecard/" + namecardImage + ") no-repeat center fixed",
+            backgroundImage: "url(assets/namecard/" + namecardImage + ")",
+            backgroundPosition: "0 100%",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
             backgroundSize: "cover",
             backgroundColor: "var(--pickment-color-secondary)"
           }}
@@ -240,7 +247,7 @@ const GameLeaderboard: React.FC = () => {
 
         <IonGrid>
           <IonRow class='ion-padding-bottom ion-text-center'>
-            <IonButton href={showIllustration? '\\illustration#showEffect' : '\\home'} class='margin-lr-auto button-long-primary-outline' color='outline'>{showIllustration? 'Lanjut' : 'Kembali ke Menu Utama'}</IonButton>
+            <IonButton href={showIllustration && participation <= 30? '\\illustration#showEffect' : '\\home'} class='margin-lr-auto button-long-primary-outline' color='outline'>{showIllustration && participation <= 30? 'Lanjut' : 'Kembali ke Menu Utama'}</IonButton>
           </IonRow>
         </IonGrid>
       </IonFooter>

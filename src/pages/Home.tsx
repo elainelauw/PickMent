@@ -112,14 +112,6 @@ const Home: React.FC = () => {
                     </IonRow>
                   </IonCol>
                 </IonRow>
-
-                <IonRow class='ion-padding'>
-                  <IonCol>
-                    <IonRow>
-                      <IonButton href='\about' class='margin-lr-auto button-long-primary-outline' color='outline'>Tentang PickMent</IonButton>
-                    </IonRow>
-                  </IonCol>
-                </IonRow>
               </IonCol>
             </IonRow>
           </IonRow>

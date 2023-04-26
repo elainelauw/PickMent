@@ -294,7 +294,10 @@ const Profile: React.FC = () => {
             <IonCol
               class='profile-col-top ion-no-padding margin-lr-auto'
               style={{
-                background: "url(assets/namecard/" + namecard + ") no-repeat center fixed",
+                backgroundImage: "url(assets/namecard/" + namecard + ")",
+                backgroundPosition: "0 100%",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
                 backgroundSize: "cover",
                 backgroundColor: "var(--pickment-color-secondary)"
               }}

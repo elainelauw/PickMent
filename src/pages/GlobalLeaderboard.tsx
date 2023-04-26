@@ -128,7 +128,10 @@ const GlobalLeaderboard: React.FC = () => {
           leaderboard.map((l, i) => (
             <IonItem lines='none' class={l.uid === userCtx.user[0].uid? 'global-leaderboard-item-user' : 'global-leaderboard-item'} key={i}
               style={{
-                background: "url(assets/namecard/" + l.namecardImage + ") no-repeat center fixed",
+                backgroundImage: "url(assets/namecard/" + l.namecardImage + ")",
+                backgroundPosition: "0 100%",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
                 backgroundSize: "cover",
                 backgroundColor: "var(--pickment-color-secondary)"
               }}
@@ -176,7 +179,10 @@ const GlobalLeaderboard: React.FC = () => {
       <IonFooter class='global-leaderboard-footer ion-no-border'>
         <IonItem lines='none' class='global-leaderboard-item-user'
           style={{
-            background: "url(assets/namecard/" + namecardImage + ") no-repeat center fixed",
+            backgroundImage: "url(assets/namecard/" + namecardImage + ")",
+            backgroundPosition: "0 100%",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
             backgroundSize: "cover",
             backgroundColor: "var(--pickment-color-secondary)"
           }}

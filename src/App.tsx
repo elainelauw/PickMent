@@ -37,7 +37,6 @@ import Notification from './pages/Notification';
 import Archive from './pages/Archive';
 import Profile from './pages/Profile';
 import Illustration from './pages/Illustration';
-import About from './pages/About';
 
 import Play from './pages/Play';
 import GameLeaderboard from './pages/GameLeaderboard';
@@ -140,10 +139,6 @@ const App: React.FC = () => {
 
           <Route exact path="/illustration">
             <Illustration/>
-          </Route>
-
-          <Route exact path="/about">
-            <About/>
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>

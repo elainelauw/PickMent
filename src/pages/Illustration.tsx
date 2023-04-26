@@ -21,22 +21,9 @@ const Illustration: React.FC = () => {
 		[navigate]
 	);
 
-  useEffect(() => {
-    if(
-      window.location.href.split('#')[1] &&
-      window.location.href.split('#')[1] === "showEffect"
-    ) {
-      setShowEffect(true);
-    }
-
-		const interval = setInterval(() => {
-      setShowEffect(false);
-    }, 3000);
-    return () => clearInterval(interval);
-	}, []);
-
+  const [participation, setParticipation] = useState(0);
+  const [participationCounter, setParticipationCounter] = useState(0);
   const [illustration, setIllustration] = useState(0);
-  const [showEffect, setShowEffect] = useState(false);
 
 	useEffect(() => {
 		if(userCtx.user.length === 0) {
@@ -45,21 +32,28 @@ const Illustration: React.FC = () => {
     if(userCtx.user[0].uid != -1) {
       const formData = new FormData();
 
-        formData.append('uid', userCtx.user[0].uid.toString());
+      formData.append('uid', userCtx.user[0].uid.toString());
 
-        axios.post("http://localhost/PickMent/getProfile.php", formData).then(res => {
-          if(parseInt(res.data.profile[0].participation) > 0) {
-            if(parseInt(res.data.profile[0].participation) < 2) {
-              setIllustration(parseInt(res.data.profile[0].participation));
-            }
-            else {
-              setIllustration(2);
-            }
+      axios.post("http://localhost/PickMent/getProfile.php", formData).then(res => {
+        if(parseInt(res.data.profile[0].participation) > 0) {
+          var total = parseInt(res.data.profile[0].participation);
+          var counter = total % 5;
+          var illust = Math.floor(total / 5);
+
+          setParticipation(total);
+          setParticipationCounter(counter);
+          
+          if(illust < 6) {
+            setIllustration(illust);
           }
           else {
-            redirect404();
+            setIllustration(6);
           }
-        });
+        }
+        else {
+          redirect404();
+        }
+      });
     }
 	}, [userCtx]);
 
@@ -72,7 +66,6 @@ const Illustration: React.FC = () => {
               <img
                 className={
                   (i + 1) === illustration ||
-                  !window.location.href.split('#')[1] ||
                   window.location.href.split('#')[1] !== "showEffect"?
                     'illustration-item-appear'
                   :
@@ -80,16 +73,21 @@ const Illustration: React.FC = () => {
                 }
                 src={'assets/illustration/' + (i + 1) + '.png'} key={i}/>
             )}
-            {showEffect &&
-              <img className='illustration-effect' src={'assets/illustration/' + '2' + ' sparkles.gif'}/>
-            }
           </IonRow>
 
           <IonRow class='illustration-row-bottom ion-align-items-center'>
             <IonCol>
               <IonRow class='ion-margin-start ion-margin-end'>
                 <IonLabel class='margin-lr-auto'>
-                  <p className='ion-padding-bottom ion-text-center illustration-text'>Partisipasi dalam set permainan untuk lihat perubahan lebih lanjut!</p>
+                  <p className='ion-padding-bottom ion-text-center illustration-text'>
+                    {participation < 30?
+                      'Partisipasi dalam set permainan untuk lihat perubahan lebih lanjut (' +
+                      participationCounter +
+                      '/5)'
+                    :
+                      'Terima kasih telah berpartisipasi dalam pengujian aplikasi PickMent!'
+                    }
+                  </p>
                 </IonLabel>
               </IonRow>
 

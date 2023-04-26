@@ -131,9 +131,7 @@ const Upload: React.FC = () => {
     else {
       if((dataTmp.length < parseInt(items)) || (dataTmp.length % parseInt(items) !== 0)) {
         const messageTmp = 
-          "Data harus terdiri dari minimal " +
-          items +
-          " baris data (Jumlah Item per Set) dan merupakan kelipatan dari " +
+          "Data harus merupakan kelipatan dari " +
           items +
           " (Jumlah Item per Set). Harap menambahkan " +
           (parseInt(items) - (dataTmp.length % parseInt(items))).toString() +
@@ -144,7 +142,7 @@ const Upload: React.FC = () => {
 
         setErrorMessage(messageTmp);
 
-        return setToastMessage(messageTmp);
+        return setToastMessage('Jumlah Data tidak sesuai.');
       }
     }
 

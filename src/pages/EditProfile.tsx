@@ -121,7 +121,10 @@ const EditProfile: React.FC = () => {
 
         <IonItem lines='none' class='edit-profile-header-item'
           style={{
-            background: "url(assets/namecard/" + newNamecardImage + ") no-repeat center fixed",
+            backgroundImage: "url(assets/namecard/" + newNamecardImage + ")",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
             backgroundSize: "cover",
             backgroundColor: "var(--pickment-color-secondary)"
           }}

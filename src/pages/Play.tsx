@@ -1,5 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonIcon, IonLabel, IonModal, IonPage, IonProgressBar, IonRippleEffect, IonRow, NavContext } from '@ionic/react';
-import { checkmarkCircle, closeCircle } from 'ionicons/icons';
+import { checkmarkCircle, closeCircle, happyOutline, sadOutline } from 'ionicons/icons';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -154,8 +154,7 @@ const Play: React.FC = () => {
   }
 
   useEffect(() => {
-    if(gameData.length > 0 && answerData.length === gameData.length && progress > 1) {
-      console.log(answerData);
+    if(gameData.length > 0 && answerData.length === gameData.length && !isModalShown) {
       const formData = new FormData();
 
       formData.append('uid', userCtx.user[0].uid.toString());
@@ -184,13 +183,16 @@ const Play: React.FC = () => {
               <IonRow class='play-modal-row ion-padding-bottom ion-align-items-center'>
                 <IonCol class='ion-padding-bottom'>
                   <IonRow>
-                    <IonIcon icon={modalPoint === 0? closeCircle : checkmarkCircle} class='play-modal-icon margin-lr-auto'/>
+                    <IonIcon icon={modalPoint === 0? sadOutline : happyOutline} class='play-modal-icon margin-lr-auto'/>
                   </IonRow>
 
                   {modalPoint === 0?
                     <>
                       <IonRow>
-                        <p className='margin-lr-auto ion-text-center'>Pilihan Anda berbeda dari suara mayoritas: Kemenangan beruntun berakhir...</p>
+                        <p className='margin-lr-auto ion-text-center'>
+                          Pilihan Anda berbeda dari suara mayoritas:<br/>
+                          Kemenangan beruntun berakhir...
+                        </p>
                       </IonRow>
 
                       <IonRow class='ion-padding'>
@@ -200,7 +202,10 @@ const Play: React.FC = () => {
                   :
                     <>
                       <IonRow>
-                        <p className='margin-lr-auto ion-text-center'>Pilihan Anda paling banyak dipilih: Anda menang {correctCounter} kali beruntun!</p>
+                        <p className='margin-lr-auto ion-text-center'>
+                          Pilihan Anda paling banyak dipilih:<br/>
+                          Anda menang {correctCounter} kali beruntun!
+                        </p>
                       </IonRow>
 
                       <IonRow class='ion-padding'>
@@ -232,21 +237,21 @@ const Play: React.FC = () => {
 
             <IonRow class='play-row-positive ion-align-items-center ion-activatable cursor-pointer'>
               <IonCol class='play-col' onClick={() => answerHandler(1)}>
-                <img src={'assets/icon/PickMent.png'} className='play-answer-icon ion-padding'/>
+                <img src='assets/icon/Positive.png' className='play-answer-icon ion-padding'/>
                 <IonRippleEffect/>
               </IonCol>
             </IonRow>
 
             <IonRow class='play-row-neutral ion-align-items-center ion-activatable cursor-pointer'>
               <IonCol class='play-col' onClick={() => answerHandler(0)}>
-                <img src={'assets/icon/PickMent.png'} className='play-answer-icon ion-padding'/>
+                <img src='assets/icon/Neutral.png' className='play-answer-icon ion-padding'/>
                 <IonRippleEffect/>
               </IonCol>
             </IonRow>
 
             <IonRow class='play-row-negative ion-align-items-center ion-activatable cursor-pointer'>
               <IonCol class='play-col' onClick={() => answerHandler(-1)}>
-                <img src={'assets/icon/PickMent.png'} className='play-answer-icon ion-padding'/>
+                <img src='assets/icon/Negative.png' className='play-answer-icon ion-padding'/>
                 <IonRippleEffect/>
               </IonCol>
             </IonRow>

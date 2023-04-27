@@ -52,7 +52,7 @@ const GameLeaderboard: React.FC = () => {
       redirect();
     }
     else {
-      if(userCtx.user[0].uid != -1) {
+      if(userCtx.user[0].uid !== -1) {
         const formData = new FormData();
 
         formData.append('uid', userCtx.user[0].uid.toString());
@@ -126,7 +126,7 @@ const GameLeaderboard: React.FC = () => {
                       <IonItem lines='none' class={l.uid === userCtx.user[0].uid? 'game-leaderboard-item-user' : 'game-leaderboard-item'} key={i}
                         style={{
                           backgroundImage: "url(assets/namecard/" + l.namecardImage + ")",
-                          backgroundPosition: "0 100%",
+                          backgroundPosition: "center",
                           backgroundRepeat: "no-repeat",
                           backgroundAttachment: "fixed",
                           backgroundSize: "cover"
@@ -205,7 +205,7 @@ const GameLeaderboard: React.FC = () => {
         <IonItem lines='none' class='game-leaderboard-item-user'
           style={{
             backgroundImage: "url(assets/namecard/" + namecardImage + ")",
-            backgroundPosition: "0 100%",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
             backgroundSize: "cover",

@@ -71,7 +71,7 @@ const GlobalLeaderboard: React.FC = () => {
 		if(userCtx.user.length === 0) {
       redirect();
     }
-    if(userCtx.user[0].uid != -1) {
+    if(userCtx.user[0].uid !== -1) {
       const formData = new FormData();
 
       formData.append('uid', userCtx.user[0].uid.toString());
@@ -129,7 +129,7 @@ const GlobalLeaderboard: React.FC = () => {
             <IonItem lines='none' class={l.uid === userCtx.user[0].uid? 'global-leaderboard-item-user' : 'global-leaderboard-item'} key={i}
               style={{
                 backgroundImage: "url(assets/namecard/" + l.namecardImage + ")",
-                backgroundPosition: "0 100%",
+                backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundAttachment: "fixed",
                 backgroundSize: "cover",
@@ -180,7 +180,7 @@ const GlobalLeaderboard: React.FC = () => {
         <IonItem lines='none' class='global-leaderboard-item-user'
           style={{
             backgroundImage: "url(assets/namecard/" + namecardImage + ")",
-            backgroundPosition: "0 100%",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
             backgroundSize: "cover",

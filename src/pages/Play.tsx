@@ -1,5 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonIcon, IonLabel, IonModal, IonPage, IonProgressBar, IonRippleEffect, IonRow, NavContext } from '@ionic/react';
-import { checkmarkCircle, closeCircle, happyOutline, sadOutline } from 'ionicons/icons';
+import { happyOutline, sadOutline } from 'ionicons/icons';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
